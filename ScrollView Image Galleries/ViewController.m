@@ -24,6 +24,8 @@
 
 - (void)setupImageViews {
     
+
+    
     UIImageView *imageView1 = [[UIImageView alloc]initWithImage: [UIImage imageNamed:@"Lighthouse-in-Field.jpg"]];
     imageView1.contentMode = UIViewContentModeScaleAspectFill;
     imageView1.clipsToBounds = YES;
@@ -43,11 +45,21 @@
     CGSize size = CGSizeMake(imageView1.bounds.size.width+imageView2.bounds.size.width+imageView3.bounds.size.width, self.view.bounds.size.height);
     self.scrollView.contentSize = size;
     
+    self.scrollView.translatesAutoresizingMaskIntoConstraints = NO;
+    [NSLayoutConstraint activateConstraints:
+     @[
+       [self.scrollView.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor],
+       [self.scrollView.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor],
+       [self.scrollView.topAnchor constraintEqualToAnchor:self.view.topAnchor],
+       [self.scrollView.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor],
+       ]
+     ];
+    
     [NSLayoutConstraint activateConstraints:
      @[
        [imageView1.heightAnchor constraintEqualToAnchor:self.scrollView.heightAnchor],
        [imageView2.heightAnchor constraintEqualToAnchor:self.scrollView.heightAnchor],
-       [imageView3.heightAnchor constraintEqualToAnchor:self.scrollView.heightAnchor]
+       [imageView3.heightAnchor constraintEqualToAnchor:self.scrollView.heightAnchor],
        ]
      ];
     

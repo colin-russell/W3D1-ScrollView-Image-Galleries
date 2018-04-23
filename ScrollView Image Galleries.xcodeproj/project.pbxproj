@@ -16,6 +16,7 @@
 		3BCB5553208E5DD200C5362F /* Lighthouse-night.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3BCB5550208E5DD100C5362F /* Lighthouse-night.jpg */; };
 		3BCB5554208E5DD200C5362F /* Lighthouse-in-Field.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3BCB5551208E5DD100C5362F /* Lighthouse-in-Field.jpg */; };
 		3BCB5555208E5DD200C5362F /* Lighthouse.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3BCB5552208E5DD200C5362F /* Lighthouse.jpg */; };
+		3BCB557A208E832F00C5362F /* ZoomViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5579208E832F00C5362F /* ZoomViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -32,6 +33,8 @@
 		3BCB5550208E5DD100C5362F /* Lighthouse-night.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Lighthouse-night.jpg"; sourceTree = "<group>"; };
 		3BCB5551208E5DD100C5362F /* Lighthouse-in-Field.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Lighthouse-in-Field.jpg"; sourceTree = "<group>"; };
 		3BCB5552208E5DD200C5362F /* Lighthouse.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Lighthouse.jpg; sourceTree = "<group>"; };
+		3BCB5578208E832F00C5362F /* ZoomViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ZoomViewController.h; sourceTree = "<group>"; };
+		3BCB5579208E832F00C5362F /* ZoomViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ZoomViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +77,8 @@
 				3BCB552F208E595400C5362F /* LaunchScreen.storyboard */,
 				3BCB5532208E595400C5362F /* Info.plist */,
 				3BCB5533208E595400C5362F /* main.m */,
+				3BCB5578208E832F00C5362F /* ZoomViewController.h */,
+				3BCB5579208E832F00C5362F /* ZoomViewController.m */,
 			);
 			path = "ScrollView Image Galleries";
 			sourceTree = "<group>";
@@ -164,6 +169,7 @@
 				3BCB5529208E594F00C5362F /* ViewController.m in Sources */,
 				3BCB5534208E595400C5362F /* main.m in Sources */,
 				3BCB5526208E594F00C5362F /* AppDelegate.m in Sources */,
+				3BCB557A208E832F00C5362F /* ZoomViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
