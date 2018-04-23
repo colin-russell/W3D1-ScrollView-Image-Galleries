@@ -13,6 +13,9 @@
 		3BCB552E208E595400C5362F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3BCB552D208E595400C5362F /* Assets.xcassets */; };
 		3BCB5531208E595400C5362F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3BCB552F208E595400C5362F /* LaunchScreen.storyboard */; };
 		3BCB5534208E595400C5362F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 3BCB5533208E595400C5362F /* main.m */; };
+		3BCB5553208E5DD200C5362F /* Lighthouse-night.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3BCB5550208E5DD100C5362F /* Lighthouse-night.jpg */; };
+		3BCB5554208E5DD200C5362F /* Lighthouse-in-Field.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3BCB5551208E5DD100C5362F /* Lighthouse-in-Field.jpg */; };
+		3BCB5555208E5DD200C5362F /* Lighthouse.jpg in Resources */ = {isa = PBXBuildFile; fileRef = 3BCB5552208E5DD200C5362F /* Lighthouse.jpg */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +29,9 @@
 		3BCB5530208E595400C5362F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3BCB5532208E595400C5362F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3BCB5533208E595400C5362F /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		3BCB5550208E5DD100C5362F /* Lighthouse-night.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Lighthouse-night.jpg"; sourceTree = "<group>"; };
+		3BCB5551208E5DD100C5362F /* Lighthouse-in-Field.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "Lighthouse-in-Field.jpg"; sourceTree = "<group>"; };
+		3BCB5552208E5DD200C5362F /* Lighthouse.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = Lighthouse.jpg; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +64,7 @@
 		3BCB5523208E594F00C5362F /* ScrollView Image Galleries */ = {
 			isa = PBXGroup;
 			children = (
+				3BCB553A208E5B4000C5362F /* Images */,
 				3BCB5524208E594F00C5362F /* AppDelegate.h */,
 				3BCB5525208E594F00C5362F /* AppDelegate.m */,
 				3BCB5527208E594F00C5362F /* ViewController.h */,
@@ -69,6 +76,16 @@
 				3BCB5533208E595400C5362F /* main.m */,
 			);
 			path = "ScrollView Image Galleries";
+			sourceTree = "<group>";
+		};
+		3BCB553A208E5B4000C5362F /* Images */ = {
+			isa = PBXGroup;
+			children = (
+				3BCB5551208E5DD100C5362F /* Lighthouse-in-Field.jpg */,
+				3BCB5550208E5DD100C5362F /* Lighthouse-night.jpg */,
+				3BCB5552208E5DD200C5362F /* Lighthouse.jpg */,
+			);
+			name = Images;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -130,7 +147,10 @@
 			files = (
 				3BCB5531208E595400C5362F /* LaunchScreen.storyboard in Resources */,
 				3BCB552E208E595400C5362F /* Assets.xcassets in Resources */,
+				3BCB5553208E5DD200C5362F /* Lighthouse-night.jpg in Resources */,
+				3BCB5555208E5DD200C5362F /* Lighthouse.jpg in Resources */,
 				3BCB552C208E594F00C5362F /* Main.storyboard in Resources */,
+				3BCB5554208E5DD200C5362F /* Lighthouse-in-Field.jpg in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
