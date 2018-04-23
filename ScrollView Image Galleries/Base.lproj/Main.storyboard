@@ -25,7 +25,8 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="eDb-1W-6O7" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="8nP-gP-dge"/>
-                            <constraint firstItem="eDb-1W-6O7" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="GRI-Fg-Z8W"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="top" secondItem="eDb-1W-6O7" secondAttribute="top" constant="10" id="RYV-tl-fzZ"/>
+                            <constraint firstItem="eDb-1W-6O7" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" constant="10" id="SLY-Fs-3iU"/>
                             <constraint firstItem="eDb-1W-6O7" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="jZB-DM-dJt"/>
                             <constraint firstItem="eDb-1W-6O7" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="jZC-ge-ubo"/>
                         </constraints>
@@ -47,12 +48,22 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="NRj-27-sSn">
-                                <rect key="frame" x="67" y="239" width="240" height="128"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" maximumZoomScale="5" translatesAutoresizingMaskIntoConstraints="NO" id="NRj-27-sSn">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                             </scrollView>
+                            <imageView contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Seq-EX-xRx">
+                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <gestureRecognizers/>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="NRj-27-sSn" firstAttribute="centerY" secondItem="gZG-Vl-gQs" secondAttribute="centerY" id="008-wa-cO7"/>
+                            <constraint firstItem="NRj-27-sSn" firstAttribute="centerX" secondItem="gZG-Vl-gQs" secondAttribute="centerX" id="QWC-dp-CMV"/>
+                            <constraint firstItem="NRj-27-sSn" firstAttribute="top" secondItem="gZG-Vl-gQs" secondAttribute="top" id="WrW-5z-VZh"/>
+                            <constraint firstItem="NRj-27-sSn" firstAttribute="width" secondItem="bho-AU-t7o" secondAttribute="width" id="pXe-85-wIs"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="gZG-Vl-gQs"/>
                     </view>
                     <connections>
@@ -61,7 +72,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3HE-eE-tVH" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="116" y="-632"/>
+            <point key="canvasLocation" x="116" y="-632.83358320839591"/>
         </scene>
     </scenes>
 </document>
