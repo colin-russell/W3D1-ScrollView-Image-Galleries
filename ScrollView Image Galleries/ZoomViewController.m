@@ -8,8 +8,9 @@
 
 #import "ZoomViewController.h"
 
-@interface ZoomViewController ()
+@interface ZoomViewController () <UIScrollViewDelegate>
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) IBOutlet UIImageView *imageView;
 
 @end
 
@@ -20,6 +21,9 @@
 
 }
 
+- (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
+    return self.imageView;
+}
 
 
 @end
