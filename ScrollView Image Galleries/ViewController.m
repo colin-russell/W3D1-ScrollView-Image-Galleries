@@ -12,6 +12,7 @@
 @interface ViewController ()
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
+@property (weak, nonatomic) UIPageControl *pageControl;
 
 @end
 
@@ -20,6 +21,7 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     [self setupViews];
+    [self setupPageControl];
     
 }
 
@@ -44,7 +46,7 @@
     CGSize size = CGSizeMake(imageView1.bounds.size.width+imageView2.bounds.size.width+imageView3.bounds.size.width, self.view.bounds.size.height);
     self.scrollView.contentSize = size;
     self.scrollView.pagingEnabled = YES;
-
+    
     [NSLayoutConstraint activateConstraints:
      @[
        [imageView1.heightAnchor constraintEqualToAnchor:self.view.heightAnchor],
@@ -70,7 +72,7 @@
        [imageView3.trailingAnchor constraintEqualToAnchor:self.scrollView.trailingAnchor]
        ]
      ];
-
+    
     
     [self.scrollView addSubview:imageView1];
     [self.scrollView addSubview:imageView2];
@@ -99,6 +101,27 @@
 - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
     ZoomViewController *zoomViewController = (ZoomViewController*)segue.destinationViewController;
     zoomViewController.imageToZoom = sender;
+}
+
+- (void)setupPageControl {
+    UIPageControl *pageControl = [UIPageControl new];
+    self.pageControl = pageControl;
+    [self.view addSubview:pageControl];
+    self.pageControl.layer.zPosition = 10;
+    self.pageControl.translatesAutoresizingMaskIntoConstraints = NO;
+    
+    [NSLayoutConstraint activateConstraints:
+     @[
+       [self.pageControl.heightAnchor constraintEqualToConstant:30],
+       [self.pageControl.leadingAnchor constraintEqualToAnchor:self.view.leadingAnchor],
+       [self.pageControl.trailingAnchor constraintEqualToAnchor:self.view.trailingAnchor],
+       [self.pageControl.bottomAnchor constraintEqualToAnchor:self.view.bottomAnchor]
+       ]
+     ];
+    
+    self.pageControl.alpha = 0.5;
+    self.pageControl.backgroundColor = [UIColor blackColor];
+    self.pageControl.numberOfPages = 3;
 }
 
 @end
