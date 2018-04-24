@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import "ZoomViewController.h"
 
 @interface ViewController ()
 
@@ -23,8 +24,6 @@
 }
 
 - (void)setupViews {
-    
-
     
     UIImageView *imageView1 = [[UIImageView alloc]initWithImage: [UIImage imageNamed:@"Lighthouse-in-Field.jpg"]];
     imageView1.contentMode = UIViewContentModeScaleAspectFill;
@@ -44,12 +43,16 @@
     
     CGSize size = CGSizeMake(imageView1.bounds.size.width+imageView2.bounds.size.width+imageView3.bounds.size.width, self.view.bounds.size.height);
     self.scrollView.contentSize = size;
+    self.scrollView.pagingEnabled = YES;
 
     [NSLayoutConstraint activateConstraints:
      @[
-       [imageView1.heightAnchor constraintEqualToAnchor:self.scrollView.heightAnchor],
-       [imageView2.heightAnchor constraintEqualToAnchor:self.scrollView.heightAnchor],
-       [imageView3.heightAnchor constraintEqualToAnchor:self.scrollView.heightAnchor],
+       [imageView1.heightAnchor constraintEqualToAnchor:self.view.heightAnchor],
+       [imageView2.heightAnchor constraintEqualToAnchor:self.view.heightAnchor],
+       [imageView3.heightAnchor constraintEqualToAnchor:self.view.heightAnchor],
+       [imageView1.widthAnchor constraintEqualToAnchor:self.view.widthAnchor],
+       [imageView2.widthAnchor constraintEqualToAnchor:self.view.widthAnchor],
+       [imageView3.widthAnchor constraintEqualToAnchor:self.view.widthAnchor],
        ]
      ];
     
@@ -73,6 +76,29 @@
     [self.scrollView addSubview:imageView2];
     [self.scrollView addSubview:imageView3];
     
+    imageView1.userInteractionEnabled = YES;
+    imageView2.userInteractionEnabled = YES;
+    imageView3.userInteractionEnabled = YES;
+    SEL selector = @selector(handleTapGesture:);
+    UITapGestureRecognizer *tapGestureRecognizer1 = [[UITapGestureRecognizer alloc] initWithTarget:self action:selector];
+    UITapGestureRecognizer *tapGestureRecognizer2 = [[UITapGestureRecognizer alloc] initWithTarget:self action:selector];
+    UITapGestureRecognizer *tapGestureRecognizer3 = [[UITapGestureRecognizer alloc] initWithTarget:self action:selector];
+    [imageView1 addGestureRecognizer:tapGestureRecognizer1];
+    [imageView2 addGestureRecognizer:tapGestureRecognizer2];
+    [imageView3 addGestureRecognizer:tapGestureRecognizer3];
+    
+    
+}
+
+- (void)handleTapGesture:(UITapGestureRecognizer *)sender {
+    UIImageView *imageView = (UIImageView*)sender.view;
+    UIImage *image = imageView.image;
+    [self performSegueWithIdentifier:@"zoomSegue" sender:image];
+}
+
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender {
+    ZoomViewController *zoomViewController = (ZoomViewController*)segue.destinationViewController;
+    zoomViewController.imageToZoom = sender;
 }
 
 @end

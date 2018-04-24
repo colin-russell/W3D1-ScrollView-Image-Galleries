@@ -10,4 +10,6 @@
 
 @interface ZoomViewController : UIViewController
 
+@property UIImage *imageToZoom;
+
 @end
