@@ -18,20 +18,19 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
+   
     self.scrollView.delegate = self;
-    self.scrollView.minimumZoomScale = 5;
-    self.scrollView.maximumZoomScale = 1;
+    self.scrollView.minimumZoomScale = 0.1;
+    self.scrollView.maximumZoomScale = 100;
     self.scrollView.userInteractionEnabled = YES;
     self.imageView = [[UIImageView alloc] initWithImage:self.imageToZoom];
-    self.imageView.tag = 100;
-     
-    [self.scrollView addSubview:self.imageView];
     
-    self.imageView.userInteractionEnabled = YES;
+    self.scrollView.contentSize = self.imageToZoom.size;
+    [self.scrollView addSubview:self.imageView];
 }
 
 - (UIView *)viewForZoomingInScrollView:(UIScrollView *)scrollView {
-    return [scrollView viewWithTag:100];
+    return self.imageView;
 }
 
 
