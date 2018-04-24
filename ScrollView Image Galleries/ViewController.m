@@ -9,7 +9,7 @@
 #import "ViewController.h"
 #import "ZoomViewController.h"
 
-@interface ViewController ()
+@interface ViewController () <UIScrollViewDelegate>
 
 @property (weak, nonatomic) IBOutlet UIScrollView *scrollView;
 @property (weak, nonatomic) UIPageControl *pageControl;
@@ -22,6 +22,7 @@
     [super viewDidLoad];
     [self setupViews];
     [self setupPageControl];
+    self.scrollView.delegate = self;
     
 }
 
@@ -44,6 +45,7 @@
     imageView3.translatesAutoresizingMaskIntoConstraints = NO;
     
     CGSize size = CGSizeMake(imageView1.bounds.size.width+imageView2.bounds.size.width+imageView3.bounds.size.width, self.view.bounds.size.height);
+    NSLog(@"%f",size.height);
     self.scrollView.contentSize = size;
     self.scrollView.pagingEnabled = YES;
     
@@ -122,6 +124,17 @@
     self.pageControl.alpha = 0.5;
     self.pageControl.backgroundColor = [UIColor blackColor];
     self.pageControl.numberOfPages = 3;
+}
+
+- (void)scrollViewDidScroll:(UIScrollView *)scrollView {
+    float pageWidth = self.scrollView.contentSize.width/3;
+    if (scrollView.bounds.origin.x < pageWidth) {
+        self.pageControl.currentPage = 0;
+    } else if (scrollView.bounds.origin.x == pageWidth){
+        self.pageControl.currentPage = 1;
+    } else if (scrollView.bounds.origin.x == 2*pageWidth){
+        self.pageControl.currentPage = 2;
+    }
 }
 
 @end
