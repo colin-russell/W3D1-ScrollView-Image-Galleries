@@ -45,7 +45,6 @@
     imageView3.translatesAutoresizingMaskIntoConstraints = NO;
     
     CGSize size = CGSizeMake(imageView1.bounds.size.width+imageView2.bounds.size.width+imageView3.bounds.size.width, self.view.bounds.size.height);
-    NSLog(@"%f",size.height);
     self.scrollView.contentSize = size;
     self.scrollView.pagingEnabled = YES;
     
